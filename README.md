@@ -1,6 +1,6 @@
 # AutoDelete-V2
 Delete group messages after a specific time
-
+2
 ## Variables
 1. `API_ID` : Get from [my.telegram.org](https://my.telegram.org/)
 2. `API_HASH` : Get from [my.telegram.org](https://my.telegram.org)
