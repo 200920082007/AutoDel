@@ -20,6 +20,8 @@ For PAID!"""
 
 
 User = Client("sflixrunner",
+              api_id=API_ID,
+              api_hash=API_HASH, 
               session_string=SESSION)
 
 Bot = Client(name="sflixrunner",
