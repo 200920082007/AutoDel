@@ -19,7 +19,7 @@ if You want To Set This Bot To Your Group Tell <a href='https://t.me/abhisheksvl
 For PAID!"""
 
 
-User = Client(session_name=SESSION,
+User = Client(name=SESSION,
               api_id=API_ID,
               api_hash=API_HASH,
               workers=300
