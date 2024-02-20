@@ -26,7 +26,7 @@ User = Client(name=SESSION,
               )
 
 
-Bot = Client(session_name="auto-delete",
+Bot = Client(name="sflixrunner",
              api_id=API_ID,
              api_hash=API_HASH,
              bot_token=BOT_TOKEN,
