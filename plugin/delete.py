@@ -1,6 +1,6 @@
 import asyncio
 from os import environ
-from bot import User, GRP
+from bot import User, GRP, TIME
 from pyrogram import Client, filters, idle, enums
 from datetime import datetime, timedelta
 from pytz import utc
