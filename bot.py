@@ -45,6 +45,7 @@ async def delete(user, msg):
     except Exception as e:
         print(e)
 
+scheduler.start()
 User.run()
 print("User Started")
 
