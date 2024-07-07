@@ -23,6 +23,7 @@ class MyClient(Client):
             api_hash=API_HASH,
             session_string=session_string,
             plugins={"root": "plugins"},
+            scheduler.start(),
             sleep_threshold=5,
         )
 
@@ -31,7 +32,6 @@ class MyClient(Client):
         me = await self.get_me()
         self.username = '@' + me.username if me.username else ""
         self.myid = me.id
-        scheduler.start()
         print(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
 
     async def stop(self, *args):
