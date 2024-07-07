@@ -9,7 +9,7 @@ API_HASH = environ.get("API_HASH")
 BOT_TOKEN = environ.get("BOT_TOKEN")
 SESSION = environ.get("SESSION")
 TIME = int(environ.get("TIME"))
-GROUPS = []
+GRP = int(environ.get("GRP"))
 for grp in environ.get("GROUPS").split():
     GROUPS.append(int(grp))
 ADMINS = []
@@ -40,8 +40,8 @@ Bot = Client(name="sflixrunner",
 @Bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
-
-@User.on_message(filters.group & filters.text)
+    
+@Client.on_message(filters.chat(GRP)
 async def delete(user, message):
     try:
         msg = message
