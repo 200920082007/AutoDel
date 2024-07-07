@@ -9,4 +9,4 @@ RUN pip3 install -U pip && pip3 install -U -r requirements.txt
 RUN mkdir /AutoDel
 WORKDIR /AutoDel
 COPY . .
-CMD ["python", "main.py"]
+CMD ["python", "-m plugin"]
