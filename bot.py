@@ -63,7 +63,9 @@ async def _delete(user, msg):
         await user.delete_messages((link unavailable), (link unavailable))
     except Exception as e:
         print(e)
-       
+
+scheduler.start()
+
 User.start()
 print("User Started!")
 Bot.start()
