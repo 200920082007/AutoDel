@@ -61,12 +61,13 @@ async def delete(user, message):
         )
 
 async def _delete(user, msg):
-    try:
-        await msg.delete()
-    except Exception as e:
-        print(e)
-    finally:
-        pass
+  try:
+    await msg.delete()
+  except Exception as e:
+    print(e)
+  finally:
+    pass
+
 
 
 scheduler.start()
