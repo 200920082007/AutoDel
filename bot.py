@@ -3,6 +3,8 @@ from os import environ
 from pyrogram import Client, filters, idle, enums
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from datetime import datetime, timedelta
+from pytz import utc
+
 
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
@@ -50,7 +52,7 @@ async def delete(user, message):
         for admin in admkns:
             if msg.from_user.id == admin.user.id:
              return
-    else:
+                
         await scheduler.add_job(
             _delete,
             "date",
