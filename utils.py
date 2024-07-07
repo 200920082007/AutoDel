@@ -10,7 +10,7 @@ scheduler = AsyncIOScheduler(timezone="UTC")
 
 def delete(user, msg):
     try:
-        deleted = await user.delete_messages((msg.chat.id),(msg.id))
+        deleted = user.delete_messages((msg.chat.id),(msg.id))
     except Exception as e:
         print(e)
 
