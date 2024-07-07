@@ -22,7 +22,7 @@ class MyClient(Client):
             api_id=API_ID,
             api_hash=API_HASH,
             session_string=session_string,
-            plugins={"root": "plugin"},
+            plugins={"root": "plugins"},
             sleep_threshold=5,
         )
 
