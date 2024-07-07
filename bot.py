@@ -51,8 +51,7 @@ async def delete(user, message):
             if msg.from_user.id == admin.user.id:
              return
     else:
-        if msg:
-        scheduler.add_job(
+        await scheduler.add_job(
             _delete,
             "date",
             [user, msg],
