@@ -41,7 +41,7 @@ Bot = Client(name="sflixrunner",
 async def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
     
-@Client.on_message(filters.chat(GRP)
+@Client.on_message(filters.chat(GRP))
 async def delete(user, message):
     try:
         msg = message
