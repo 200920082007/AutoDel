@@ -40,5 +40,3 @@ class MyClient(Client):
     
 User = MyClient(session_string=SESSION
                   )
-
-User.run()
