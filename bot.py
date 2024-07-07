@@ -61,12 +61,7 @@ async def delete(user, message):
         )
 
 async def _delete(user, msg):
-  try:
-    await msg.delete()
-  except Exception as e:
-    print(e)
-  finally:
-    pass
+    return await user.delete_messages(msg.chat.id, msg.id)
 
 
 
