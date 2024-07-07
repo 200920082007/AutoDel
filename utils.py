@@ -5,7 +5,3 @@ from pytz import utc
 
 
 scheduler = AsyncIOScheduler(timezone="UTC")
-
-
-
-scheduler.start()
