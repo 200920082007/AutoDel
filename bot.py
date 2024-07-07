@@ -38,5 +38,6 @@ class MyClient(Client):
         print("Bot stopped. Bye.")
     
     
-User = MyClient(session_string=SESSION
+User = MyClient(name_="spamBanBot",
+                session_string=SESSION
                   )
