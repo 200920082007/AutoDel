@@ -3,6 +3,8 @@ from os import environ
 from pyrogram import Client, filters, idle, enums
 from datetime import datetime, timedelta
 from pytz import utc
+from utils import scheduler
+
 
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
@@ -28,6 +30,7 @@ class MyClient(Client):
         me = await self.get_me()
         self.username = '@' + me.username if me.username else ""
         self.myid = me.id
+        scheduler.start()
         print(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
 
     async def stop(self, *args):
