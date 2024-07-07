@@ -50,8 +50,8 @@ async def delete(user, message):
         for admin in admkns:
             if msg.from_user.id == admin.user.id:
              return
-        else:
-          if msg:
+    else:
+        if msg:
         scheduler.add_job(
             _delete,
             "date",
