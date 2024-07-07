@@ -23,7 +23,7 @@ class MyClient(Client):
             api_hash=API_HASH,
             session_string=session_string,
             plugins={"root": "plugins"},
-            scheduler.start())
+            )
 
     async def start(self):
         await super().start()
