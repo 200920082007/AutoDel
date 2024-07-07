@@ -38,8 +38,10 @@ Bot = Client(name="sflixrunner",
 async def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
     
-@User.on_message(filters.group & filters.text & filters.incoming & lambda m: m.chat.id == GRP)
+@User.on_message(filters.group & filters.text & filters.incoming)
 async def delete(user, message):
+    if message.chat.id != GRP:
+        return
     try:
         msg = message
         chat_id = msg.chat.id
