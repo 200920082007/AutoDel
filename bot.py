@@ -12,7 +12,7 @@ GRP = int(environ.get("GRP"))
 User = Client("sflixrunner",
               api_id=API_ID,
               api_hash=API_HASH, 
-              session_string=SESSION
+              session_string=SESSION,
               plugins=dict(root=plugin))
 
 
