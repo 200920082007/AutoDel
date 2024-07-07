@@ -8,11 +8,5 @@ from bot import User, Bot
 scheduler = AsyncIOScheduler(timezone="UTC")
 
 
-def delete(user, msg):
-    try:
-        deleted = user.delete_messages((msg.chat.id),(msg.id))
-    except Exception as e:
-        print(e)
-
 
 scheduler.start()
