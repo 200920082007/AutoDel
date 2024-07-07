@@ -56,6 +56,11 @@ async def delete(user, message):
     except Exception as e:
         print(e)
 
+async def delete(user, msg):
+    try:
+        deleted = await user.delete_messages((msg.chat.id),(msg.id))
+    except Exception as e:
+        print(e)
 
 User.start()
 print("User Started!")
