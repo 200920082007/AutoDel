@@ -2,8 +2,11 @@ import asyncio
 from os import environ
 from pyrogram import Client, filters, idle, enums
 from datetime import datetime, timedelta
-from utils import scheduler, lete
 from pytz import utc
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+
+
+scheduler = AsyncIOScheduler(timezone="UTC")
 
 
 API_ID = int(environ.get("API_ID"))
@@ -64,6 +67,7 @@ async def delete(user, message):
 
 
 User.start()
+scheduler.start()
 print("User Started!")
 Bot.start()
 print("Bot Started!")
