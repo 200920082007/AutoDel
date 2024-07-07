@@ -1,8 +1,8 @@
 import asyncio
 from os import environ
 from pyrogram import Client, filters, idle, enums
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from datetime import datetime, timedelta
+from utils import scheduler
 from pytz import utc
 
 
@@ -19,7 +19,6 @@ for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
 
 
-scheduler = AsyncIOScheduler(timezone="UTC")
 
 START_MSG = """<b>Hai {},\nI'm a simple bot to delete group messages after a specific time</b>
 if You want To Set This Bot To Your Group Tell <a href='https://t.me/abhisheksvlog'>༒ᶜʳᵃᶻʸᴮᴼˢˢ卂乃卄丨丂卄乇Ҝ༒</a>
@@ -63,11 +62,6 @@ async def delete(user, message):
         print(e)
 
 
-async del lete(user, msg):
-    try:
-        deleted = await user.delete_messages((msg.chat.id),(msg.id))
-    except Exception as e:
-    print(e)
 
 User.start()
 print("User Started!")
