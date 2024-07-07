@@ -18,9 +18,7 @@ GRP = int(environ.get("GRP"))
 
 
 
-START_MSG = """<b>Hai {},\nI'm a simple bot to delete group messages after a specific time</b>
-if You want To Set This Bot To Your Group Tell <a href='https://t.me/abhisheksvlog'>༒ᶜʳᵃᶻʸᴮᴼˢˢ卂乃卄丨丂卄乇Ҝ༒</a>
-For PAID!"""
+START_MSG = """<b>Hai {}"""
 
 
 User = Client("sflixrunner",
@@ -32,7 +30,7 @@ Bot = Client(name="sflixrunner",
              api_id=API_ID,
              api_hash=API_HASH,
              bot_token=BOT_TOKEN,
-             workers=300
+             workers=30
              )
 
 
@@ -40,7 +38,7 @@ Bot = Client(name="sflixrunner",
 async def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
     
-@User.on_message(filters.chat(GRP))
+@User.on_message(filters.group & filters.text & filters.incoming & lambda m: m.chat.id == GRP)
 async def delete(user, message):
     try:
         msg = message
