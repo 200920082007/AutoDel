@@ -1,6 +1,8 @@
 import asyncio
 from os import environ
-from pyrogram import Client, filters, idle
+from pyrogram import Client, filters, idle, enums
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from datetime import datetime, timedelta
 
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
@@ -13,6 +15,9 @@ for grp in environ.get("GROUPS").split():
 ADMINS = []
 for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
+
+
+scheduler = AsyncIOScheduler(timezone="UTC")
 
 START_MSG = """<b>Hai {},\nI'm a simple bot to delete group messages after a specific time</b>
 if You want To Set This Bot To Your Group Tell <a href='https://t.me/abhisheksvlog'>༒ᶜʳᵃᶻʸᴮᴼˢˢ卂乃卄丨丂卄乇Ҝ༒</a>
@@ -36,16 +41,28 @@ Bot = Client(name="sflixrunner",
 async def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
 
-@User.on_message(filters.chat(GROUPS))
+@User.on_message(filters.group & filters.text)
 async def delete(user, message):
     try:
-       if message.from_user.id in ADMINS:
-          return
-       else:
-          await asyncio.sleep(TIME)
-          await Bot.delete_messages(message.chat.id, message.id)
+        msg = message
+        chat_id = msg.chat.id
+        admkns = user.get_chat_members(chat_id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
+        if msg.from_user.id in admkns:
+            return
+        else:
+          if msg:
+        scheduler.add_job(
+            _delete,
+            "date",
+            [user, msg],
+            run_date=datetime.now() + timedelta(seconds=TIME),
+        )
+
+async def _delete(user, msg):
+    try:
+        await user.delete_messages((link unavailable), (link unavailable))
     except Exception as e:
-       print(e)
+        print(e)
        
 User.start()
 print("User Started!")
