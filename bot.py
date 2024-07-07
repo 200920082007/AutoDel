@@ -47,7 +47,8 @@ async def delete(user, message):
         msg = message
         chat_id = msg.chat.id
         admkns = user.get_chat_members(chat_id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
-        if msg.from_user.id in admkns:
+        for admins in admkns
+        if msg.from_user.id in admins:
             return
         else:
           if msg:
