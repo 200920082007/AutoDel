@@ -3,7 +3,7 @@ from os import environ
 from pyrogram import Client, filters, idle, enums
 from datetime import datetime, timedelta
 from pytz import utc
-from utils import lete , scheduler 
+from utils import scheduler 
 
 
 API_ID = int(environ.get("API_ID"))
