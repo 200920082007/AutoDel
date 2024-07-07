@@ -43,7 +43,7 @@ Bot = Client(name="sflixrunner",
 async def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
     
-@Client.on_message(filters.chat(GRP))
+@User.on_message(filters.chat(GRP))
 async def delete(user, message):
     try:
         msg = message
@@ -54,13 +54,13 @@ async def delete(user, message):
              return
                 
         await scheduler.add_job(
-            _delete,
+            lete,
             "date",
             [user, msg],
             run_date=datetime.now() + timedelta(seconds=TIME),
         )
 
-async def _delete(bot, msg):
+async def lete(user, msg):
     return await user.delete_messages(msg.chat.id, msg.id)
 
 
