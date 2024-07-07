@@ -65,7 +65,9 @@ async def delete(user, message):
 
 async def lete(user, msg):
     try:
-        deleted = await user.delete_messages((msg.chat.id), (msg.id))
+        deleted = await user.delete_messages(int(msg.chat.id), int(msg.id))
+    except:
+        await message.reply(str(e))
         
 scheduler.start()
 
