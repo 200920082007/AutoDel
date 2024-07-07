@@ -20,7 +20,7 @@ class MyClient(Client):
             name="sflixrunnerr",
             api_id=API_ID,
             api_hash=API_HASH,
-            session_string=SESSION,
+            session_string=session_string,
             plugins={"root": "plugin"},
             sleep_threshold=5,
         )
