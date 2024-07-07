@@ -62,9 +62,12 @@ async def delete(user, message):
 
 async def _delete(user, msg):
     try:
-        await user.delete_messages((link unavailable), (link unavailable))
+        await msg.delete()
     except Exception as e:
         print(e)
+    finally:
+        pass
+
 
 scheduler.start()
 
