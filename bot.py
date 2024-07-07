@@ -17,7 +17,7 @@ class MyClient(Client):
 
     def __init__(self, name_, bot_token=None, session_string=None):
         super().__init__(
-            name=name_,
+            name="sflixrunnerr",
             api_id=API_ID,
             api_hash=API_HASH,
             session_string=SESSION,
