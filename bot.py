@@ -17,7 +17,7 @@ class MyClient(Client):
         super().__init__(
             name=name_,
             api_id=API_ID,
-            api_hash=API_HASH,,
+            api_hash=API_HASH,
             session_string=SESSION,
             plugins={"root": "plugin"},
             sleep_threshold=5,
