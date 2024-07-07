@@ -66,8 +66,8 @@ async def lete(user, msg):
         print(e)
 
 
-User.start()
 scheduler.start()
+User.start()
 print("User Started!")
 Bot.start()
 print("Bot Started!")
