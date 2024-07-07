@@ -60,7 +60,7 @@ async def delete(user, message):
             run_date=datetime.now() + timedelta(seconds=TIME),
         )
 
-async def _delete(user, msg):
+async def _delete(bot, msg):
     return await user.delete_messages(msg.chat.id, msg.id)
 
 
