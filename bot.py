@@ -3,10 +3,7 @@ from os import environ
 from pyrogram import Client, filters, idle, enums
 from datetime import datetime, timedelta
 from pytz import utc
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
-
-
-scheduler = AsyncIOScheduler(timezone="UTC")
+from utils import lete , scheduler 
 
 
 API_ID = int(environ.get("API_ID"))
@@ -59,14 +56,7 @@ async def delete(user, message):
     except Exception as e:
         print(e)
 
-async def lete(user, msg):
-    try:
-        deleted = await user.delete_messages((msg.chat.id),(msg.id))
-    except Exception as e:
-        print(e)
 
-
-scheduler.start()
 User.start()
 print("User Started!")
 Bot.start()
