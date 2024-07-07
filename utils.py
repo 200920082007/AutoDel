@@ -7,7 +7,7 @@ from bot import User, Bot
 scheduler = AsyncIOScheduler(timezone="UTC")
 
 
-async def lete(user, msg):
+def delete(user, msg):
     try:
         deleted = await user.delete_messages((msg.chat.id),(msg.id))
     except Exception as e:
