@@ -38,8 +38,7 @@ class MyClient(Client):
         print("Bot stopped. Bye.")
     
     
-User = MyClient(name="sflixrunnerr",
-               session_string=SESSION
+User = MyClient(session_string=SESSION
                   )
 
 User.run()
