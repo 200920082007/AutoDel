@@ -61,7 +61,8 @@ async def delete(user, message):
         )
 
 async def lete(user, msg):
-    return await user.delete_messages(msg.chat.id, msg.id)
+    try:
+        await user.delete_messages(msg.chat.id, msg.id)
 
 
 
