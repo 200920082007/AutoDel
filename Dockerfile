@@ -9,4 +9,4 @@ RUN pip3 install -U pip && pip3 install -U -r requirements.txt
 RUN mkdir /AutoDel
 WORKDIR /AutoDel
 COPY . .
-CMD ["python", "bot.py"]
+CMD ["python", "main.py"]
