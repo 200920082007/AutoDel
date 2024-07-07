@@ -1,4 +1,4 @@
-from pyrogram import Client, message
+from pyrogram import Client
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from pytz import utc
 from bot import User, Bot
